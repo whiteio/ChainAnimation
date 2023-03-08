@@ -10,21 +10,21 @@ import SwiftUI
 @resultBuilder
 public enum ChainAnimationBuilder {
 
-  static func buildBlock() -> [ChainAnimationBlock] { [] }
+  public static func buildBlock() -> [ChainAnimationBlock] { [] }
 
-  static func buildBlock(_ components: ChainAnimationBlocksConvertible...) -> [ChainAnimationBlock] {
-    components.flatMap { $0.asChainAnimations() }
+  public static func buildBlock(_ components: ChainAnimationBlocksConvertible...) -> [ChainAnimationBlock] {
+    components.flatMap { $0._asChainAnimations() }
   }
 
-  static func buildIf(_ value: ChainAnimationBlocksConvertible?) -> ChainAnimationBlocksConvertible {
+  public static func buildIf(_ value: ChainAnimationBlocksConvertible?) -> ChainAnimationBlocksConvertible {
     value ?? []
   }
 
-  static func buildEither(first: ChainAnimationBlocksConvertible) -> ChainAnimationBlocksConvertible {
+  public static func buildEither(first: ChainAnimationBlocksConvertible) -> ChainAnimationBlocksConvertible {
     first
   }
 
-  static func buildEither(second: ChainAnimationBlocksConvertible) -> ChainAnimationBlocksConvertible {
+  public static func buildEither(second: ChainAnimationBlocksConvertible) -> ChainAnimationBlocksConvertible {
     second
   }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 extension [ChainAnimationBlock]: ChainAnimationBlocksConvertible {
-  func asChainAnimations() -> [ChainAnimationBlock] {
+    public func _asChainAnimations() -> [ChainAnimationBlock] {
     self
   }
 }

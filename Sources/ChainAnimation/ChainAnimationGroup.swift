@@ -9,7 +9,7 @@ import SwiftUI
 
 // MARK: - ChainAnimationGroup
 
-struct ChainAnimationGroup {
+public struct ChainAnimationGroup {
   var name: String
   @ChainAnimationBuilder var chainAnimations: () -> [ChainAnimationBlock]
 }
@@ -17,7 +17,7 @@ struct ChainAnimationGroup {
 // MARK: ChainAnimationBlocksConvertible
 
 extension ChainAnimationGroup: ChainAnimationBlocksConvertible {
-  func asChainAnimations() -> [ChainAnimationBlock] {
+    public func _asChainAnimations() -> [ChainAnimationBlock] {
     [ChainAnimationBlock(value: .group(chainAnimations()))]
   }
 }

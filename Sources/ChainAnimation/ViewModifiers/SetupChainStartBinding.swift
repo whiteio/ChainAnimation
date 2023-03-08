@@ -14,12 +14,11 @@ struct SetupChainStartBinding: ViewModifier {
   func body(content: Content) -> some View {
     content
       .onChange(of: enabled) { newValue in
-        print("ANIMATION ABOUT TO START")
         guard newValue else { return }
 
-        dump(chainAnimations)
-        print("IN ANIMATION MODE")
-        chainAnimations.startAnimating { }
+        chainAnimations.startAnimating {
+            enabled = false
+        }
       }
   }
 }

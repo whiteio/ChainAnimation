@@ -4,20 +4,19 @@
 import PackageDescription
 
 let package = Package(
-    name: "ChainAnimation",
-    platforms: [.macOS(.v13), .iOS(.v16)],
-    products: [
-        .library(
-            name: "ChainAnimation",
-            targets: ["ChainAnimation"]),
-    ],
-    dependencies: [],
-    targets: [
-        .target(
-            name: "ChainAnimation",
-            dependencies: []),
-        .testTarget(
-            name: "ChainAnimationTests",
-            dependencies: ["ChainAnimation"]),
-    ]
-)
+  name: "ChainAnimation",
+  platforms: [.macOS(.v13), .iOS(.v16)],
+  products: [
+    .library(
+      name: "ChainAnimation",
+      targets: ["ChainAnimation"]),
+  ],
+  dependencies: [.package(url: "https://github.com/airbnb/swift", from: "1.0.0")],
+  targets: [
+    .target(
+      name: "ChainAnimation",
+      dependencies: []),
+    .testTarget(
+      name: "ChainAnimationTests",
+      dependencies: ["ChainAnimation"]),
+  ])

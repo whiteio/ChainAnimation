@@ -11,7 +11,7 @@ let package = Package(
       name: "ChainAnimation",
       targets: ["ChainAnimation"]),
   ],
-  dependencies: [.package(url: "https://github.com/airbnb/swift", from: "1.0.0")],
+  dependencies: [],
   targets: [
     .target(
       name: "ChainAnimation",

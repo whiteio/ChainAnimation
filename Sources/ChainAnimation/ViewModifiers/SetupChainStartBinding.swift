@@ -18,7 +18,7 @@ struct SetupChainStartBinding: ViewModifier {
         guard newValue else { return }
 
         chainAnimations.startAnimating {
-            enabled = false
+          enabled = false
         }
       }
   }

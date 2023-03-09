@@ -1,10 +1,10 @@
 // MARK: - ChainAnimation
 //
-//public struct ChainAnimation {
+// public struct ChainAnimation {
 //  public private(set) var text = "Hello, World!"
 //
 //  public init() { }
-//}
+// }
 
 import SwiftUI
 

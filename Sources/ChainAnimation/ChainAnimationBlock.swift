@@ -41,9 +41,9 @@ extension ChainAnimationBlock: ChainAnimationBlocksConvertible {
 
 // MARK: ChainAnimationBlock.Empty
 
-public extension ChainAnimationBlock {
-    struct Empty: ChainAnimationBlocksConvertible {
-      public func _asChainAnimations() -> [ChainAnimationBlock] {
+extension ChainAnimationBlock {
+  public struct Empty: ChainAnimationBlocksConvertible {
+    public func _asChainAnimations() -> [ChainAnimationBlock] {
       []
     }
   }

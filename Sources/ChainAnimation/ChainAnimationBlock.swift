@@ -26,7 +26,6 @@ public struct ChainAnimationBlock {
 
 extension ChainAnimationBlock {
   enum Value {
-    case duration(Double)
     case group([ChainAnimationBlock])
   }
 }

@@ -23,11 +23,11 @@ struct ContentView: View {
       .opacity(opacity)
       .scaleEffect(scale)
       .createChainAnimation($shouldAnimate) {
-        ChainAnimationGroup(name: "test", chainAnimations: {
+        ChainAnimationGroup(duration: 1, chainAnimations: {
           ChainAnimationBlock(animation: .linear(duration: 4)) {
             opacity = 0.5
           }
-          ChainAnimationBlock(animation: .easeIn(duration: 0.1)) {
+          ChainAnimationBlock(animation: .easeIn) {
             scale = 1.5
           }
         })
@@ -35,5 +35,13 @@ struct ContentView: View {
           opacity = 0.25
         }
       }
+  }
+}
+
+// MARK: - ContentView_Previews
+
+struct ContentView_Previews: PreviewProvider {
+  static var previews: some View {
+    ContentView()
   }
 }

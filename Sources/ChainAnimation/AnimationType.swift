@@ -10,49 +10,52 @@ import SwiftUI
 // MARK: - AnimationType
 
 /// Animations available for each chain animation block
-public enum AnimationType {
-  case `default`
-  case easeIn(duration: Double)
-  case easeOut(duration: Double)
-  case easeInOut(duration: Double)
-  case linear(duration: Double)
-  case custom(animation: Animation)
-}
 
-extension AnimationType {
-  var underlyingAnimation: Animation {
-    switch self {
-    case .default:
-      return Animation.default
-    case .easeIn(let duration):
-      return Animation.easeIn(duration: duration)
-    case .easeOut(let duration):
-      return Animation.easeOut(duration: duration)
-    case .easeInOut(let duration):
-      return Animation.easeInOut(duration: duration)
-    case .linear(let duration):
-      return Animation.linear(duration: duration)
-    case .custom(let animation):
-      return animation
-    }
-  }
-}
+public struct BlockAnimation {
 
-extension AnimationType {
-  var duration: Double {
-    switch self {
-    case .default:
-      return 0.1
-    case .easeIn(let duration):
-      return duration
-    case .easeOut(let duration):
-      return duration
-    case .easeInOut(let duration):
-      return duration
-    case .linear(let duration):
-      return duration
-    case .custom:
-      return 0.1
-    }
+  // MARK: Public
+
+  public static var easeIn: Self {
+    BlockAnimation(animation: .easeIn, duration: defaultDuration)
   }
+
+  public static var easeOut: Self {
+    BlockAnimation(animation: .easeOut, duration: defaultDuration)
+  }
+
+  public static var easeInOut: Self {
+    BlockAnimation(animation: .easeInOut, duration: defaultDuration)
+  }
+
+  public static var linear: Self {
+    BlockAnimation(animation: .linear, duration: defaultDuration)
+  }
+
+  public static func easeIn(duration: Double) -> Self {
+    BlockAnimation(animation: .easeIn(duration: duration), duration: duration)
+  }
+
+  public static func easeOut(duration: Double) -> Self {
+    BlockAnimation(animation: .easeOut(duration: duration), duration: duration)
+  }
+
+  public static func easeInOut(duration: Double) -> Self {
+    BlockAnimation(animation: .easeInOut(duration: duration), duration: duration)
+  }
+
+  public static func linear(duration: Double) -> Self {
+    BlockAnimation(animation: .linear(duration: duration), duration: duration)
+  }
+
+  public static func custom(animation: Animation) -> Self {
+    BlockAnimation(animation: animation, duration: defaultDuration)
+  }
+
+  // MARK: Internal
+
+  static var defaultDuration = 1.0
+
+  var animation: Animation
+  var duration: Double
+
 }

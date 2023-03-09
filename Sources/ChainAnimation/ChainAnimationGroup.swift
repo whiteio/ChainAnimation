@@ -10,8 +10,8 @@ import SwiftUI
 // MARK: - ChainAnimationGroup
 
 /// A type which can group a collection of chain animation blocks
-public struct ChainAnimationGroup {
-  var name: String
+struct ChainAnimationGroup {
+  var duration: TimeInterval
   @ChainAnimationBuilder var chainAnimations: () -> [ChainAnimationBlock]
 }
 

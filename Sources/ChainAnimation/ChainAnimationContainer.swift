@@ -18,7 +18,7 @@ class ChainAnimationContainer: ObservableObject {
     for block in animationBlocks {
       guard let animation = block.animation, let closure = block.closure else { continue }
 
-      withAnimation(animation.underlyingAnimation.delay(offset)) {
+      withAnimation(animation.animation.delay(offset)) {
         closure()
       }
 

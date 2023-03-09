@@ -10,9 +10,9 @@
 public struct ChainAnimationBlock {
   var value: Value?
   var closure: (() -> Void)?
-  var animation: AnimationType?
+  var animation: BlockAnimation?
 
-  public init(animation: AnimationType, closure: @escaping () -> Void) {
+  public init(animation: BlockAnimation, closure: @escaping () -> Void) {
     self.animation = animation
     self.closure = closure
   }

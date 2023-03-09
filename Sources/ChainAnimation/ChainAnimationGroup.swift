@@ -11,14 +11,14 @@ import SwiftUI
 
 /// A type which can group a collection of chain animation blocks
 struct ChainAnimationGroup {
-  var duration: TimeInterval
-  @ChainAnimationBuilder var chainAnimations: () -> [ChainAnimationBlock]
+    var duration: TimeInterval
+    @ChainAnimationBuilder var chainAnimations: () -> [ChainAnimationBlock]
 }
 
 // MARK: ChainAnimationBlocksConvertible
 
 extension ChainAnimationGroup: ChainAnimationBlocksConvertible {
-  public func asChainAnimations() -> [ChainAnimationBlock] {
-    [ChainAnimationBlock(value: .group(chainAnimations()))]
-  }
+    public func asChainAnimations() -> [ChainAnimationBlock] {
+        [ChainAnimationBlock(value: .group(chainAnimations()))]
+    }
 }

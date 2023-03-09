@@ -12,9 +12,7 @@ public extension View {
     func createChainAnimation(
         _ enabled: Binding<Bool>,
         @ChainAnimationBuilder _ content: @escaping () -> [ChainAnimationBlock]
-    )
-        -> some View
-    {
+    ) -> some View {
         setupChainStartBinding(enabled)
             .addBlocksToEnvironment(content)
             .environmentObject(ChainAnimationContainer())

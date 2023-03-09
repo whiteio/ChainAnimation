@@ -11,11 +11,14 @@ let package = Package(
       name: "ChainAnimation",
       targets: ["ChainAnimation"]),
   ],
-  dependencies: [],
+  dependencies: [
+    .package(url: "https://github.com/realm/SwiftLint", revision: "a876e860ee0e166a05428f430888de5d798c0f8d")
+  ],
   targets: [
     .target(
       name: "ChainAnimation",
-      dependencies: []),
+      dependencies: [],
+      plugins: [.plugin(name: "SwiftLintPlugin", package: "SwiftLint")]),
     .testTarget(
       name: "ChainAnimationTests",
       dependencies: ["ChainAnimation"]),

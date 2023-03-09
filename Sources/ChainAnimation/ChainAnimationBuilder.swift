@@ -26,7 +26,7 @@ public enum ChainAnimationBuilder {
   /// - Parameter components: Statement blocks which can be combined to create an array of blocks
   /// - Returns: An array of chainable animation blocks
   public static func buildBlock(_ components: ChainAnimationBlocksConvertible...) -> [ChainAnimationBlock] {
-    components.flatMap { $0._asChainAnimations() }
+    components.flatMap { $0.asChainAnimations() }
   }
 
   /// Builds a partial result that's conditionally present.

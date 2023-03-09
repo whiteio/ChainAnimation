@@ -32,7 +32,7 @@ extension View {
 
 // MARK: - Previews_View_Modifiers_LibraryContent
 
-struct Previews_View_Modifiers_LibraryContent: LibraryContentProvider {
+struct CreateChainModifierLibraryContent: LibraryContentProvider {
   @State var scaleValue: CGFloat = 1
   @State var opacityValue: CGFloat = 1
   @State var enabled = false

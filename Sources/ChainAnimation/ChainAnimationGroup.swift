@@ -18,7 +18,7 @@ struct ChainAnimationGroup {
 // MARK: ChainAnimationBlocksConvertible
 
 extension ChainAnimationGroup: ChainAnimationBlocksConvertible {
-  public func _asChainAnimations() -> [ChainAnimationBlock] {
+  public func asChainAnimations() -> [ChainAnimationBlock] {
     [ChainAnimationBlock(value: .group(chainAnimations()))]
   }
 }

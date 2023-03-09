@@ -6,5 +6,5 @@
 //
 
 public protocol ChainAnimationBlocksConvertible {
-  func _asChainAnimations() -> [ChainAnimationBlock]
+  func asChainAnimations() -> [ChainAnimationBlock]
 }

@@ -33,7 +33,7 @@ extension ChainAnimationBlock {
 // MARK: ChainAnimationBlocksConvertible
 
 extension ChainAnimationBlock: ChainAnimationBlocksConvertible {
-  public func _asChainAnimations() -> [ChainAnimationBlock] {
+  public func asChainAnimations() -> [ChainAnimationBlock] {
     [self]
   }
 }
@@ -42,7 +42,7 @@ extension ChainAnimationBlock: ChainAnimationBlocksConvertible {
 
 extension ChainAnimationBlock {
   public struct Empty: ChainAnimationBlocksConvertible {
-    public func _asChainAnimations() -> [ChainAnimationBlock] {
+    public func asChainAnimations() -> [ChainAnimationBlock] {
       []
     }
   }

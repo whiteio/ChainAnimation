@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Append chain animation blocks to the animation blocks in the chain animation container
 struct CreateChainViewModifier: ViewModifier {
   @ChainAnimationBuilder var chainContent: () -> [ChainAnimationBlock]
   @EnvironmentObject var chainAnimations: ChainAnimationContainer

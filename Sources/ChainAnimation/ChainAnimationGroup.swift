@@ -9,6 +9,7 @@ import SwiftUI
 
 // MARK: - ChainAnimationGroup
 
+/// A type which can group a collection of chain animation blocks
 public struct ChainAnimationGroup {
   var name: String
   @ChainAnimationBuilder var chainAnimations: () -> [ChainAnimationBlock]

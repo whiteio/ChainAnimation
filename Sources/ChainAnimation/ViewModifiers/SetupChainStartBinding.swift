@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Trigger the animation to start when the value of a binding changes to true
 struct SetupChainStartBinding: ViewModifier {
   @EnvironmentObject var chainAnimations: ChainAnimationContainer
   @Binding var enabled: Bool

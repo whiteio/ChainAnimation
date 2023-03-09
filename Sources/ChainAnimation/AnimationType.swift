@@ -9,6 +9,7 @@ import SwiftUI
 
 // MARK: - AnimationType
 
+/// Animations available for each chain animation block
 public enum AnimationType {
   case `default`
   case easeIn(duration: Double)

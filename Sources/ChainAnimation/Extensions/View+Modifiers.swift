@@ -29,3 +29,23 @@ extension View {
     modifier(SetupChainStartBinding(enabled: enabled))
   }
 }
+
+struct Previews_View_Modifiers_LibraryContent: LibraryContentProvider {
+    @State var scaleValue: CGFloat = 1
+    @State var opacityValue: CGFloat = 1
+    @State var enabled: Bool = false
+
+    @LibraryContentBuilder
+    func modifiers(base: Text) -> [LibraryItem] {
+        LibraryItem(base.createChainAnimation($enabled, {
+            ChainAnimationBlock(animation: .linear(duration: 0.1)) {
+                scaleValue = 1.5
+                opacityValue = 0.5
+            }
+            ChainAnimationBlock(animation: .easeIn(duration: 0.5)) {
+                scaleValue = 1
+                opacityValue = 1
+            }
+        }), category: .effect)
+    }
+}
